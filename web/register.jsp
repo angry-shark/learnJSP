@@ -11,7 +11,14 @@
     <title>Title</title>
 </head>
 <body>
+    <%
+        if(request.getAttribute("message") !=  null){
+            out.println(request.getAttribute("message"));
+        }
+    %>
+
     <form method="post" action="register_do.jsp">
+        注册<hr/>
         username:<input type="text" name="username">
         <br />
         password:<input type="password" name="password">

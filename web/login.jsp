@@ -11,16 +11,15 @@
     <title>Title</title>
 </head>
 <%
-    String username = null;
-    String password = null;
-    //书写java代码
-    username = request.getParameter("username");
-    password = request.getParameter("password");
-    System.out.println("uid is: " + username + "\npwd is: " + password);
+    Object uid = request.getAttribute("username");
+    Object msg = request.getAttribute("message");
+    if(msg != null)
+        out.println(msg);
 %>
 
 <body>
-    <form method="post" action="login.jsp">
+    <form method="post" action="login_do.jsp">
+        登陆<hr/>
         username:<input type="text" name="username">
         <br />
         password:<input type="password" name="password">
